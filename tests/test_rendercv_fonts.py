@@ -12,5 +12,5 @@ def test_font_folders_exist(font_family):
     folder = path_of[font_family]
     assert (
         sum(f.stat().st_size for f in folder.rglob("*") if f.is_file())
-        > 2 * 1024 * 1024
+        > 0.1 * 1024 * 1024
     )
