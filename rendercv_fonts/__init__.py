@@ -4,7 +4,7 @@ Some fonts for RenderCV.
 
 import pathlib
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 package_folder_path = pathlib.Path(__file__).parent
 
