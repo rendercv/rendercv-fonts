@@ -19,3 +19,13 @@ path_of = {
     for font_famiy in available_font_families
 }
 paths_to_font_folders = [path for path in path_of.values()]
+paths_to_font_files = [
+    font_file
+    for font_folder in paths_to_font_folders
+    for font_file in font_folder.rglob("*")
+    if font_file.is_file() and font_file.suffix not in {"", ".txt"}
+]
+links_to_font_files = [
+    f"https://raw.githubusercontent.com/rendercv/rendercv-fonts/main/rendercv_fonts/{font_path.relative_to(package_folder_path)}"
+    for font_path in paths_to_font_files
+]
